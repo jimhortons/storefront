@@ -40,7 +40,8 @@ export async function getStaticProps () {
     return {
       props: {
         products,
-        fallback: false
+        fallback: false,
+        revalidate: 20
       }
     }
   }
