@@ -1,6 +1,6 @@
 import styles from "./../styles/products.module.css";
 import { loadStripe } from "@stripe/stripe-js";
-
+import Link from 'next/link' 
 // Make sure to call `loadStripe` outside of a component’s render to avoid
 // recreating the `Stripe` object on every render.
 
@@ -10,7 +10,8 @@ const stripePromise = loadStripe(
   process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
 );
 
-function Product({ productName, uid, productPrice, imageUrl, ...props }) {
+function Product({ productName, uid, productPrice, imageUrl, productDescription, ...props }) {
+  const name= "test"
   function onHandlePurchase() {
     fetch("api/products", {
       method: "POST",
@@ -22,9 +23,14 @@ function Product({ productName, uid, productPrice, imageUrl, ...props }) {
   return (
     <li className={styles.productItem}>
       <img src={imageUrl} alt="" width="100" />
-      <p> {productName}</p>
+      <p className={styles.name}>  {productName}</p>
+      <p className={styles.price}>${productPrice}</p>
 
-      <p>{uid}</p>
+      <p className={styles.description}>{productDescription.substring(0,100)}    
+      <Link href={`/product/${uid}`}>
+          <a> read more....</a>
+        </Link> 
+      </p>
       <form action="/api/products" method="POST">
         <input type="hidden" name="uid" value={uid} />
          <button type="submit">buy now</button>
@@ -37,6 +43,11 @@ function IndexPage(props) {
   const featuredProducts = Object.values(props.products).slice(0, 3);
 
   return (
+    <>
+    <header className={styles.header}>
+      <h1 >StoreFront</h1>
+      <p>featured products</p>
+    </header>
     <ul className={styles.productList}>
       {featuredProducts.map((product) => (
         <Product
@@ -46,15 +57,17 @@ function IndexPage(props) {
         />
       ))}
     </ul>
+    </>
   );
 }
-
-export async function getStaticProps() {
+ 
+export async function getStaticProps( ) {
   // `getStaticProps` is executed on the server side.
   const res = fetch(
     "https://shoeshine8k-default-rtdb.firebaseio.com/products.json"
   );
   const products = await (await res).json();
+ 
   
   return {
     props: {
