@@ -1,4 +1,4 @@
-# Accept a Payment with Stripe Checkout
+# Deployment To Vercel
 
 Stripe Checkout is the fastest way to get started with payments. Included are some basic build and run scripts you can use to start up the application.
 [Test Card Numbers](https://stripe.com/docs/testing)
