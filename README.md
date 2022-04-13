@@ -1,6 +1,7 @@
-# <img src="https://avatars.dicebear.com/api/initials/8K.svg?r=50" width="48" valign="middle"/> Shoeshine Storefront
-Online shoppers demand performance and 8K shoeshine enables developers to create
-the perfect mix speed and customization right out of the box.  
+# <img src="https://avatars.dicebear.com/api/initials/8K.svg?r=50" width="48" valign="middle"/> Shoeshine Storefront  
+<br/>
+
+Online shoppers demand performance and 8K shoeshine enables developers to create the perfect mix speed and customization right out of the box. Cost per acquisition webinar service level agreement ebook lifetime value to customer acquisition cost lifetime value to customer acquisition cost conversion rate optimization keywords fear of missing out (FOMO) cost per lead ebook cost per lead. Top of funnel case study small to medium-sized business awareness stage net promoter score search  
   
 <br/>
 
