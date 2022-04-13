@@ -1,34 +1,31 @@
 # Accept a Payment with Stripe Checkout
 
 Stripe Checkout is the fastest way to get started with payments. Included are some basic build and run scripts you can use to start up the application.
+[Test Card Numbers](https://stripe.com/docs/testing)
+[Stripe.js Docs](https://stripe.com/docs/js)
+[Stripe Docs Accept Payments](https://stripe.com/docs/payments?payments=popular)
 
-### Development
+### Install Stripe
 1. Build the application
 ~~~shell
-$ npm install
+$  npm install -D stripe @stripe/stripe-js next
 ~~~
 
-2. _Optional_: download and run the [Stripe CLI](https://stripe.com/docs/stripe-cli)
-~~~shell
-$ stripe listen --forward-to localhost:3000/api/webhooks
+
+### Stripe Keys
+1. You will need a copy of your stripe secert and public keys.
+~~~env
+# setup your keys in .env.local
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=pk_12345
+STRIPE_SECRET_KEY=sk_12345
 ~~~
 
-3. Run the application
-~~~shell
-$ STRIPE_WEBHOOK_SECRET=$(stripe listen --print-secret) npm run dev
-~~~
+ 
 
-4. Go to [localhost:3000](http://localhost:3000)
+### Nextjs Environmental Variables
+Next.js comes with built-in support for environment variables, which allows you to check stripe in development. Add your stripe
+[Next.js Docs Environmental Variables](https://nextjs.org/docs/basic-features/environment-variables)
 
-### Production
-1. Build the application
-~~~shell
-$ npm install
+ 
 
-$ npm build
-~~~
-
-2. Run the application
-~~~shell
-$ npm start
-~~~
+ 

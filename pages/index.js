@@ -17,7 +17,6 @@ function Product({ productName, uid, productPrice, imageUrl, productDescription,
       method: "POST",
       body:  JSON.stringify( { uid} ),
     })
-      
   }
 
   return (
@@ -27,7 +26,7 @@ function Product({ productName, uid, productPrice, imageUrl, productDescription,
       <p className={styles.price}>${productPrice}</p>
 
       <p className={styles.description}>{productDescription.substring(0,100)}    
-      <Link href={`/product/${uid}`}>
+       <Link href={`product/${uid}`}>
           <a> read more....</a>
         </Link> 
       </p>
